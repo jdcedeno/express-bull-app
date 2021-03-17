@@ -9,7 +9,7 @@
     "scripts": {
         "development": "@powershell -Command $env:NODE_ENV='development' ; node index.js",
         "production": "@powershell -Command $env:NODE_ENV='production' ; node index.js",
-        "queues": "node queues.js",
+        "queues": "@powershell -Command $env:NODE_ENV='production' ; node queues.js",
         "worker1": "node components/testQueue1/controller.js",
         "dev": "node index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
