@@ -1,0 +1,11 @@
+{
+    "HEROKUPORT": "PORT",
+    "DB": "MONGODB_URI",
+    "redis": {
+        "port": "REDIS_PORT",
+        "host": "REDIS_HOST",
+        "db": "REDIS_DB"
+    },
+    "REDIS_TLS_URL": "REDIS_TLS_URL",
+    "REDIS_URL": "REDIS_URL"
+}
