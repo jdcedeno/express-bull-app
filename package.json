@@ -1,7 +1,10 @@
 {
     "name": "express-bull-app",
     "version": "1.0.0",
-    "description": "",
+    "engines": {
+        "node": "14.x"
+    },
+    "description": "Template for creating RedisBull-MERN stack applications for deployment on heroku",
     "main": "index.js",
     "scripts": {
         "development": "@powershell -Command $env:NODE_ENV='development' ; node index.js",
@@ -13,7 +16,7 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
-    "author": "Jose David Cedeno",
+    "author": "Jose David Cedeno/JDRT",
     "license": "ISC",
     "dependencies": {
         "axios": "^0.21.1",
