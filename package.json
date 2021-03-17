@@ -1,0 +1,25 @@
+{
+    "name": "express-bull-app",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js"
+    },
+    "keywords": [],
+    "author": "Jose David Cedeno",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.21.1",
+        "bull": "^3.20.1",
+        "concurrently": "^6.0.0",
+        "config": "^3.3.6",
+        "debug": "^4.3.1",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "helmet": "^4.4.1",
+        "joi": "^17.4.0",
+        "morgan": "^1.10.0"
+    }
+}
