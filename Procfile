@@ -1,2 +1,2 @@
-web: npm run dev
-worker: npm run queues
+web: npm run test-server
+worker: npm run test-worker

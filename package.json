@@ -11,6 +11,7 @@
         "production": "@powershell -Command $env:NODE_ENV='production' ; node index.js",
         "queues": "@powershell -Command $env:NODE_ENV='production' ; node queues.js",
         "worker1": "node components/testQueue1/controller.js",
+        "test-worker": "node test-worker.js",
         "dev": "node index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
