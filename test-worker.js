@@ -8,7 +8,7 @@ try {
     queue.process((job, done) => {
         switch (job.data.jobName) {
             case "test1":
-                done(null, "test1, done");
+                done(null, "test1, result from worker");
                 break;
             default:
                 done(null, "default");

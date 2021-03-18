@@ -7,7 +7,8 @@ const app = express();
 const queue = new Queue("testQueue1", config.get("REDIS_URL"));
 
 app.get("/test1", async (req, res) => {
-    await queue.add({ jobName: "test1.name" });
+    workerRes = await queue.add({ jobName: "test1.name" });
+    console.log(workerRes);
     res.send("job added to queue, await to send this response");
 });
 
