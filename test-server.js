@@ -11,6 +11,10 @@ app.get("/test1", async (req, res) => {
     res.send("job added to queue, await to send this response");
 });
 
+app.get("/", (req, res) => {
+    res.send("Home");
+});
+
 const port = config.get("HEROKUPORT") || 3000;
 app.listen(port, () => {
     console.log(`Server started on port ${port}...`);
