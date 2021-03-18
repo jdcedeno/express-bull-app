@@ -7,9 +7,9 @@
     "description": "Template for creating RedisBull-MERN stack applications for deployment on heroku",
     "main": "index.js",
     "scripts": {
-        "development": "@powershell -Command $env:NODE_ENV='development' ; node index.js",
-        "production": "@powershell -Command $env:NODE_ENV='production' ; node index.js",
-        "queues": "@powershell -Command $env:NODE_ENV='production' ; node queues.js",
+        "development": "@powershell -Command $env:NODE_ENV='development'; node index.js",
+        "production": "@powershell -Command $env:NODE_ENV='production'; node index.js",
+        "queues": "@powershell -Command $env:NODE_ENV='production'; node queues.js",
         "worker1": "node components/testQueue1/controller.js",
         "test-server": "node test-server.js",
         "test-worker": "node test-worker.js",
