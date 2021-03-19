@@ -13,11 +13,12 @@ const redis =
 const queue = new Queue("testQueue1", redis);
 
 app.get("/test1", async (req, res) => {
-    workerRes = await queue.add({ jobName: "test1.name" });
+    workerRes = await queue.add(
+        { jobName: "test1.name" },
+        { removeOnComplete: true }
+    );
     console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-    console.log(typeof workerRes);
-    console.log("workerRes: ", workerRes);
-    res.send(workerRes);
+    workerRes.onComplete(res.send(workerRes));
 });
 
 app.get("/", (req, res) => {

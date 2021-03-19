@@ -14,7 +14,7 @@ try {
         setTimeout(() => {
             console.log("test1, result from worker");
         }, 5000);
-        job.finished(done({ text: "test1, result from worker" }));
+        job.finished(done({ text: "test1, result1 from worker" }));
     });
 } catch (error) {
     done(error);
