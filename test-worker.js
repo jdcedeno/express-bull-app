@@ -12,10 +12,9 @@ try {
     const queue = new Queue("testQueue1", redis);
     queue.process((job, done) => {
         setTimeout(() => {
-            console.log("test1 in redis");
-            console.log(job.data);
-            done(null, "test1, result from worker");
+            console.log("test1, result from worker");
         }, 5000);
+        job.finished(done({ text: "test1, result from worker" }));
     });
 } catch (error) {
     done(error);
