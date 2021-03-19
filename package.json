@@ -5,15 +5,13 @@
         "node": "14.x"
     },
     "description": "Template for creating RedisBull-MERN stack applications for deployment on heroku",
-    "main": "index.js",
+    "main": "test-server.js",
     "scripts": {
         "development": "@powershell -Command $env:NODE_ENV='development'; node index.js",
         "production": "@powershell -Command $env:NODE_ENV='production'; node index.js",
-        "queues": "@powershell -Command $env:NODE_ENV='production'; node queues.js",
-        "worker1": "node components/testQueue1/controller.js",
         "test-server": "node test-server.js",
         "test-worker": "node test-worker.js",
-        "dev": "node index.js",
+        "start": "concurrently \"npm run test-server\" \"npm run test-worker\"",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],

@@ -4,11 +4,18 @@ const express = require("express");
 const Queue = require("bull");
 
 const app = express();
-const queue = new Queue("testQueue1", config.get("REDIS_URL"));
+
+const env = config.get("env");
+
+const redis =
+    env === "production" ? config.get("REDIS_URL") : { ...config.get("redis") };
+
+const queue = new Queue("testQueue1", redis);
 
 app.get("/test1", async (req, res) => {
     workerRes = await queue.add({ jobName: "test1.name" });
-    res.send("job added to queue, await to send this response", workerRes);
+    jobs = queue.getJobs();
+    res.send(jobs);
 });
 
 app.get("/", (req, res) => {
