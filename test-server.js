@@ -13,12 +13,9 @@ const redis =
 const queue = new Queue("testQueue1", redis);
 
 app.get("/test1", async (req, res) => {
-    workerRes = await queue.add(
-        { jobName: "test1.name" },
-        { removeOnComplete: true }
-    );
-    console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-    workerRes.onComplete(res.send(workerRes));
+    console.log((await queue.add("data")).finished());
+    res.send("resolved something?");
+    // await queue.add({ jobName: "test1.name" }, { removeOnComplete: true });
 });
 
 app.get("/", (req, res) => {
