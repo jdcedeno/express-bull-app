@@ -15,7 +15,9 @@ const queue = new Queue("testQueue1", redis);
 app.get("/test1", async (req, res) => {
     workerRes = await queue.add({ jobName: "test1.name" });
     console.log("(logged in console f12?) workerRes: ", workerRes);
-    workerRes.then(res.send("late response?"));
+    workerRes
+        .then((workerRes) => console.log(workerRes))
+        .catch((error) => console.log("error logged in console?", error));
 });
 
 app.get("/", (req, res) => {

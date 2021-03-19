@@ -11,10 +11,12 @@ console.log("starting worker...");
 try {
     const queue = new Queue("testQueue1", redis);
     queue.process((job, done) => {
-        console.log("test1 in redis");
-        console.log(job.data);
-        done(null, "test1, result from worker");
+        setTimeout(() => {
+            console.log("test1 in redis");
+            console.log(job.data);
+            done(null, "test1, result from worker");
+        }, 5000);
     });
 } catch (error) {
-    console.log("caught worker error");
+    done(error);
 }
