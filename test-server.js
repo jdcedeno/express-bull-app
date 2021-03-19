@@ -14,11 +14,12 @@ const queue = new Queue("testQueue1", redis);
 
 app.get("/test1", async (req, res) => {
     workerRes = await queue.add({ jobName: "test1.name" });
-    jobs = queue.getJobs();
+    console.log("(logged in console f12?) workerRes: ", workerRes);
     res.send(jobs);
 });
 
 app.get("/", (req, res) => {
+    console.log("(logged in console f12?) Home");
     res.send("Home");
 });
 
