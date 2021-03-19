@@ -14,7 +14,8 @@ const queue = new Queue("testQueue1", redis);
 
 app.get("/test1", async (req, res) => {
     workerRes = await queue.add({ jobName: "test1.name" });
-    console.log("(logged in console f12?) workerRes: ", workerRes);
+    console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+    console.log(typeof workerRes);
     console.log("workerRes: ", workerRes);
     res.send(workerRes);
 });
