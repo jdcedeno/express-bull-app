@@ -13,9 +13,9 @@ const redis =
 const queue = new Queue("testQueue1", redis);
 
 app.get("/test1", async (req, res) => {
-    console.log((await queue.add("data")).finished());
+    let promise = queue.add({ data: "hola" }, { removeOnComplete: true });
+    console.log("promise: ", promise);
     res.send("resolved something?");
-    // await queue.add({ jobName: "test1.name" }, { removeOnComplete: true });
 });
 
 app.get("/", (req, res) => {
